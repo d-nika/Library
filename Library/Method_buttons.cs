@@ -9,7 +9,7 @@ namespace Library
 {
     public class Method_buttons
     {
-        public void add(SQLiteCommand cmd, int? id_book,string name_book,
+        public static void add(SQLiteCommand cmd, int? id_book,string name_book,
             string date_pub,string action,string date_action, string name_reader)
         {
             //Возвращает или задает SQL для выполнения в базе данных.
@@ -29,7 +29,7 @@ namespace Library
 
         }
 
-        public void edit(SQLiteCommand cmd, int? id_book, string date_pub, string name_reader)
+        public static void edit(SQLiteCommand cmd, int? id_book, string date_pub, string name_reader)
         {
             cmd.CommandText =
                 "update library set Date_of_pub=@pub_date, Name_reader=@reader_name WHERE ID_book=@id";
@@ -41,7 +41,7 @@ namespace Library
 
         }
 
-        public void delete(SQLiteCommand cmd, int? id_book)
+        public static void delete(SQLiteCommand cmd, int? id_book)
         {
             cmd.CommandText =
                 "delete from library WHERE ID_book=@id";
